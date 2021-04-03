@@ -1,14 +1,23 @@
 public class Stack {
-    static class MinMaxStack {
-	    Node head; 
+    
+	    Node head;
+        private int size;
+        public Stack(){
+            size = 0;
+        } 
         public int peek() {
             return head.val;
-    }
-
+        }
     public int pop() {
-		int value = head.val;
-		head = head.next;
-		return value; 
+        try{
+		    int value = head.val;
+		    head = head.next;
+            size--;
+		    return value;
+        }
+        catch (Exception e){
+            return -1;
+        } 
     }
 
     public void push(Integer number) {
@@ -17,6 +26,7 @@ public class Stack {
 			} else{
 				head = new Node(number, Math.min(number, head.min), Math.max(number,head.max),head);
 			}
+            size++;
     }
 
     public int getMin() {

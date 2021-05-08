@@ -28,10 +28,7 @@ public class Stack {
             size++;
     }
 
-    public int getMin() {
-    
-      return head.min;
-    }
+
 
     public int getMax() {
       

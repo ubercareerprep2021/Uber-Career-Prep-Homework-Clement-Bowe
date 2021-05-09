@@ -2,6 +2,7 @@ public class Stack {
 	    Node head;
         private int size;
         public Stack(){
+            head = null;
             size = 0;
         } 
         public int peek() {
@@ -23,24 +24,22 @@ public class Stack {
 			if(head == null){
 				head = new Node(number, number);
 			} else{
-				head = new Node(number, Math.max(number,head.max),head);
+				head = new Node(number, Math.min(number,head.min),head);
 			}
             size++;
     }
 
-
-
-    public int getMax() {
-      
-      return head.max;
+    public int getMin() {
+      return head.min;
     }
+    
     private class Node{
-        Integer max;
+        Integer min;
         Integer val; 
         Node next;
-        private Node(Integer val, int max, Node next){
+        private Node(Integer val, int min, Node next){
             this.val = val;
-            this.max = max;
+            this.min = min;
             this.next = next;
         }
         private Node(Integer val, Integer max){

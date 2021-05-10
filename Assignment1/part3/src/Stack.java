@@ -1,13 +1,15 @@
 public class Stack {
 	    Node head;
         private int size;
+    
         public Stack(){
             head = null;
             size = 0;
         } 
+    
         public int peek() {
-            return head.val;
-        }
+        return head.val;
+    }
     public int pop() {
         try{
 		    int value = head.val;

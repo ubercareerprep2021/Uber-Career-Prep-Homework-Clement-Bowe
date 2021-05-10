@@ -35,9 +35,12 @@ public class Queue{
     
     public int dequeue(){
         try{
-
             int value = head.next;
             head.next = head.next.next;
+            size--;
+            if(size == 0){
+                tail = head;
+            }
         } 
         catch(Exception e){
             System.out.println("Empty Queue. Must have at least one value in the queue");

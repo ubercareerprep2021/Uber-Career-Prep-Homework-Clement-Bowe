@@ -1,6 +1,6 @@
 public class LinkedList {
     
-    private Node head;
+    public Node head;
     private int size;
     public LinkedList(){
         head = null; 
@@ -41,7 +41,8 @@ public class LinkedList {
             curr = curr.next;   
         }
         size--;
-        return curr; 
+        return curr;
+
     }
 
     /**
@@ -78,6 +79,7 @@ public class LinkedList {
         }
     }
 
+    
     /**
      * inserts a new node at the given index (0 indexed)
      */
@@ -130,25 +132,11 @@ public class LinkedList {
         
         while(curr.next != null){
             System.out.print(curr.value + " -> ");
+            curr = curr.next;
         }
         System.out.print(curr.value);
         System.out.println();
     }
 
 
-    private class Node{
-        int value;
-        Node next; 
-
-        public Node (){
-        }
-        public Node(int value){
-            this.value = value;
-            this.next = null;
-        }
-        public Node(int value, Node next){
-            this.value = value;
-            this.next = next;
-        }
-    }
 }

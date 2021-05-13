@@ -22,7 +22,7 @@ public class Queue{
     }
 
     /**
-     * returns the node at the front of the LinkedList
+     * returns the node at the front of the QUeue
      */
     public void front(){
         try{
@@ -35,18 +35,18 @@ public class Queue{
     
     public int dequeue(){
         try{
-            int value = head.next;
+            int value = head.next.val;
             head.next = head.next.next;
             size--;
             if(size == 0){
                 tail = head;
             }
+            return value;
         } 
         catch(Exception e){
             System.out.println("Empty Queue. Must have at least one value in the queue");
             return -1;
         }
-
     }
 
     /**
